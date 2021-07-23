@@ -1,1 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  background-color: var(--bg);
+  --bg: white;
+  --herderbg: rgb(223, 223, 223);
+
+  --textc: #333;
+}
+
+.dark {
+  --textc: white;
+  --herderbg: rgb(92, 92, 92);
+  --bg: #333;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+p {
+  margin: 0;
+}
+* {
+  box-sizing: border-box;
+  &:focus {
+    outline: none;
+  }
+}
+
+button:focus:not(:active) span::after {
+  animation: circleGrow 0.3s linear;
+}
+@keyframes circleGrow {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(5);
+    opacity: 0;
+  }
+}

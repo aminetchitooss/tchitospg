@@ -1,0 +1,66 @@
+@mixin dflex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+$headerHeight: 70px;
+
+header {
+  height: $headerHeight;
+  @include dflex();
+  justify-content: flex-start;
+  color: var((--textc));
+  background-color: var(--herderbg);
+  font-size: 2rem;
+
+  img {
+    height: 100%;
+  }
+}
+
+main {
+  background-color: var(--bg);
+  background-size: contain;
+  height: calc(100% - #{$headerHeight});
+  width: 100%;
+  @include dflex();
+  text-align: center;
+
+  form {
+    @include dflex();
+    flex-direction: column;
+    text-align: center;
+    width: 95%;
+    max-width: 400px;
+    padding: 1rem;
+    height: 200px;
+    color: var((--textc));
+    > * {
+      width: 100%;
+    }
+    #result {
+      p {
+        margin-bottom: 1rem;
+        @include dflex();
+      }
+    }
+    #result p,
+    input,
+    button {
+      width: 100%;
+      height: 50px;
+      font-size: 1.4rem;
+      padding: 0 10px;
+    }
+    input {
+      margin-bottom: 1rem;
+    }
+    button {
+      color: var((--textc));
+      background-color: #14c0f0;
+      cursor: pointer;
+      border: 0;
+      border-radius: 6px;
+    }
+  }
+}
