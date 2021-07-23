@@ -38,22 +38,43 @@ main {
     > * {
       width: 100%;
     }
-    #result {
-      p {
-        margin-bottom: 1rem;
-        @include dflex();
-      }
-    }
+
     #result p,
     input,
     button {
       width: 100%;
-      height: 50px;
+      min-height: 50px;
       font-size: 1.4rem;
       padding: 0 10px;
     }
-    input {
-      margin-bottom: 1rem;
+    #result {
+      p {
+        margin-bottom: 1rem;
+        font-size: 4rem;
+        @include dflex();
+        border: 3px solid #14c0f0;
+        padding: 1px 0;
+        border-radius: 6px;
+      }
+    }
+    .text {
+      position: relative;
+      input {
+        margin-bottom: 1rem;
+        width: 100%;
+      }
+      .clear {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+      }
+    }
+    #result,
+    .text {
+      height: 150px;
+      @include dflex();
+      flex-direction: column;
+      justify-content: space-between;
     }
     button {
       color: var((--textc));

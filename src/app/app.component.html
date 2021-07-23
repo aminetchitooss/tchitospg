@@ -9,8 +9,13 @@
       <button type="button" (click)="show=false">Retry</button>
     </div>
     <ng-template #init>
-      <input type="text" placeholder="ex: patrimoine" name="word" [(ngModel)]="word" autocomplete="off">
-      <button>Shuffle</button>
+      <div class="text">
+        <input type="text" placeholder="ex: patrimoine" name="word" id="word" [(ngModel)]="word" autocomplete="off">
+        <span class="clear" type="button" (click)="word=''" *ngIf='word.length>0'>
+          <img src="assets/cancel.png" alt="cancel">
+        </span>
+        <button>Shuffle</button>
+      </div>
     </ng-template>
   </form>
 </main>
