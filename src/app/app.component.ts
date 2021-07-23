@@ -1,4 +1,4 @@
-import { Component, ElementRef } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +17,8 @@ export class AppComponent {
 
     this.show = true;
     this.deConstructed = this.deconstruct(this.word);
-    document.body.requestFullscreen();
+    screen.orientation.unlock();
+    // document.body.requestFullscreen();
   }
 
   deconstruct(word: string): string {
